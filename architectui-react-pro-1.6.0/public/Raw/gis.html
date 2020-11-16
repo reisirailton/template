@@ -1,0 +1,231 @@
+<div id="fullscreen" class="fullscreen">
+    <div id="map" style="width: 100%;height: 100%"></div>
+
+    <!-- Map Panel -->
+    <div class="sidepanel" id="basemap-sidepanel">
+        <div class="sidepanel-heading">
+        <span style="float:left">
+            Basemap
+        </span>
+            <button class="btn btn-icon btn-light btn-sm" style="float:right;margin:0px 5px"
+                    id="deleteBasemapBtn">
+                <i class="pe-7s-trash btn-icon-wrapper"> </i>Delete
+            </button>
+            <button class="btn btn-icon btn-light btn-sm" style="float:right;margin:0px 5px" id="addBasemapBtn">
+                <i class="lnr-plus-circle btn-icon-wrapper"> </i>Add
+            </button>
+        </div>
+        <div class="sidepanel-body">
+        </div>
+    </div>
+
+    <div class="sidepanel" id="layer-sidepanel">
+        <div class="sidepanel-heading">
+        <span style="float:left">
+            Layers
+        </span>
+            <button class="btn btn-icon btn-light btn-sm" style="float:right;margin:0px 5px" id="filterLayerBtn">
+                <i class="lnr-funnel btn-icon-wrapper"> </i>Filter
+            </button>
+            <button class="btn btn-icon btn-light btn-sm" style="float:right;margin:0px 5px" id="addLayerBtn">
+                <i class="lnr-plus-circle btn-icon-wrapper"> </i>Add
+            </button>
+        </div>
+        <div class="sidepanel-body">
+            <div id="oltree"></div>
+        </div>
+    </div>
+
+    <div class="sidepanel2" id="filter-sidepanel">
+        <div class="sidepanel-heading">
+            <span style="float:left">
+                Filter
+            </span>
+            <button type="button" class="close" aria-label="Close" id="filterX"><span aria-hidden="true">×</span>
+            </button>
+        </div>
+        <div class="sidepanel-body">
+
+        </div>
+    </div>
+
+    <div class="sidepanel" id="draw-sidepanel">
+        <div class="sidepanel-heading">
+            <span style="float:left">
+                Virtual Fence
+            </span>
+        </div>
+        <div class="sidepanel-body">
+            <div class="mb-3">
+                <label>Enable Drawing</label>
+                <div class="switch has-switch ml-2 align-middle" data-on-label="ON" data-off-label="OFF"
+                     id="drawSwitch">
+                    <div class="switch-animate switch-off" id="drawSwitchCld1">
+                        <input type="checkbox">
+                        <span class="switch-left bg-info">ON</span>
+                        <label>&nbsp;</label>
+                        <span class="switch-right bg-info">OFF</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-icon btn-warning btn-sm" id="clearDrawingBtn">
+                    <i class="lnr-magic-wand btn-icon-wrapper"> </i>Clear Drawing
+                </button>
+                <button class="btn btn-icon btn-success btn-sm" id="saveDrawingBtn">
+                    <i class="lnr-pencil btn-icon-wrapper"> </i>Save Drawing
+                </button>
+            </div>
+            <div>
+                <label>List Drawn Layer</label>
+                <table class="mb-0 table table-light table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody id="listDrawing">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidepanel" id="measure-sidepanel">
+        <div class="sidepanel-heading">
+            <span style="float:left">
+                Measurement
+            </span>
+        </div>
+        <div class="sidepanel-body">
+            <div class="mb-1">
+                <label>Enable Measurement</label>
+                <div class="switch has-switch ml-2 align-middle" data-on-label="ON" data-off-label="OFF"
+                     id="measureSwitch">
+                    <div class="switch-animate switch-off" id="measureSwitchCld1">
+                        <input type="checkbox">
+                        <span class="switch-left bg-info">ON</span>
+                        <label>&nbsp;</label>
+                        <span class="switch-right bg-info">OFF</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="measureType" class="">Type</label>
+                <select name="measureType" id="measureType" class="form-control">
+                    <option>Length</option>
+                    <option>Area</option>
+                    <option>Coordinate</option>
+                </select>
+            </div>
+            <div class="mb-1">
+                <button class="btn btn-icon btn-warning btn-sm" id="clearMeasureBtn">
+                    <i class="lnr-magic-wand btn-icon-wrapper"> </i>Clear Measurement
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- left-panel -->
+    <div class="left-panel" id="result-sidepanel">
+        <div class="sidepanel-heading">
+            <span style="float:left">
+                Search Result
+            </span>
+            <button type="button" class="close" aria-label="Close" id="searchX"><span aria-hidden="true">×</span>
+            </button>
+        </div>
+        <div class="sidepanel-body"></div>
+    </div>
+
+    <div class="sidepanel3" id="bookmark-sidepanel">
+        <div class="sidepanel-heading">
+            <span style="float:left">
+                Bookmark
+            </span>
+        </div>
+        <div class="sidepanel-body">
+            <table class="table table-light table-striped">
+                <thead>
+                <tr>
+                    <th colspan="2" style="text-align: center">Add
+                        <button class="btn btn-light" id="addBookmark"><i class="lnr-plus-circle"></i></button>
+                    </th>
+                </tr>
+                </thead>
+                <tbody id="listBookmark">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Search Places Google API -->
+    <div class=" ol-unselectable ol-control" style="top:7px;left:55px;width:450px" id="div_geocode">
+        <input type="text" class="form-control"
+               style="color:white;background-color:rgba(0,0,0,0.5);display: inline-block;width:88%" id="input_geocode"/>
+        <button id="btn_geocode" title="Search" style="display: inline-block;width:9%;height:33px">
+            <i class="lnr-magnifier"></i>
+        </button>
+    </div>
+
+    <!-- Map Control -->
+    <div class=" ol-unselectable ol-control" style="top:40px;right:7px" id="basemapBtn">
+        <button title="Basemap">
+            <i class=" lnr-map" style="font-size: 12px"></i>
+        </button>
+    </div>
+
+    <div class=" ol-unselectable ol-control" style="top:70px;right:7px" id="layerBtn">
+        <Button title="Layer">
+            <i class=" lnr-layers" style="fontSize:12px"></i>
+        </Button>
+    </div>
+
+    <div class=" ol-unselectable ol-control" style="top:100px;right:7px" id="drawBtn">
+        <Button title="Virtual Fencing">
+            <i class=" lnr-pencil" style="fontSize:12px"></i>
+        </Button>
+    </div>
+
+    <div class=" ol-unselectable ol-control" style="top:130px;right:7px" id="measureBtn">
+        <Button title="Measurement">
+            <i class=" lnr-line-spacing" style="fontSize:12px"></i>
+        </Button>
+    </div>
+
+    <div class=" ol-unselectable ol-control" style="top:55px;left:7px" id="locateBtn">
+        <Button title="Locate Me">
+            <i class="lnr-frame-contract" style="fontSize:12px"></i>
+        </Button>
+    </div>
+
+    <div class=" ol-unselectable ol-control" style="top:85px;left:7px" id="bookmarkBtn">
+        <Button title="Bookmark">
+            <i class="lnr-bookmark" style="fontSize:12px"></i>
+        </Button>
+    </div>
+
+    <div id="popup" class="ol-popup">
+        <div class="popup-header">
+            <h6>Details</h6>
+            <a id="popup-closer" class="ol-popup-closer"></a>
+        </div>
+        <div id="popup-content" style="overflow:auto;height:83%;width:100%;padding: 8px 15px">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Properties</th>
+                    <th>Value</th>
+                </tr>
+                </thead>
+                <tbody id="popup-tbody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+</div>

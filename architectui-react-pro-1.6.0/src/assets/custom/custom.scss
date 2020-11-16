@@ -1,0 +1,268 @@
+// CUSTOM
+
+.fullscreen:-moz-full-screen {
+  height: 100%;
+}
+
+.fullscreen:-webkit-full-screen {
+  height: 100%;
+}
+
+.fullscreen:-ms-fullscreen {
+  height: 100%;
+}
+
+.fullscreen:fullscreen {
+  height: 100%;
+}
+
+.fullscreen {
+  margin-bottom: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.sidepanel {
+  position: absolute;
+  top: 50px;
+  right: 65px;
+  width: 400px;
+  height: 250px;
+  display: none;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  margin-bottom: 24px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
+  overflow-y:auto;
+}
+
+.sidepanel2 {
+  position: absolute;
+  top: 315px;
+  right: 65px;
+  width: 400px;
+  height: auto;
+  display: none;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  margin-bottom: 24px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.sidepanel3 {
+  position: absolute;
+  top: 110px;
+  left: 65px;
+  width: 400px;
+  height: auto;
+  display: none;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  margin-bottom: 24px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.left-panel {
+  position: absolute;
+  top: 6em;
+  left: 7em;
+  width: 400px;
+  display: none;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.sidepanel-heading{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.12);
+  height: 50px;
+  font-size: 16px;
+  padding: 14px 22px;
+}
+
+.sidepanel-body{
+  padding: 14px 22px;
+  height: 100%;
+}
+
+.custom-mouse-position {
+  position: absolute;
+  left: 10px;
+  bottom: 40px;
+  color: white;
+  background-color: grey;
+  padding: 2px 4px;
+}
+
+/* HIDE RADIO */
+[type=radio].thumbnil {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio].thumbnil + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio].thumbnil:checked + img {
+  outline: 2px solid #f00;
+}
+
+/* for measurement */
+
+.tooltip {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  color: white;
+  padding: 4px 8px;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+.tooltip-measure {
+  opacity: 1;
+  font-weight: bold;
+}
+
+.tooltip-static {
+  background-color: #ffcc33;
+  color: black;
+  border: 1px solid white;
+}
+
+.tooltip-measure:before,
+.tooltip-static:before {
+  border-top: 6px solid rgba(0, 0, 0, 0.5);
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  margin-left: -7px;
+  left: 50%;
+}
+
+.tooltip-static:before {
+  border-top-color: #ffcc33;
+}
+
+/* autocomplete */
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+.autocomplete-items {
+  color: black;
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+
+/* end of autocomplete css */
+
+// popup css
+
+.ol-popup {
+  position: absolute;
+  background-color: white;
+  -webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+  border-radius: 10px;
+  border: 1px solid #3b8fc4;
+  bottom: 25px;
+  left: -53px;
+  min-width: 280px;
+  display: none;
+  color: black;
+  width: 440px;
+  height: 350px;
+}
+
+.popup-header {
+  padding: 15px 15px 1px 15px;
+  background-color: #3b8fc4;
+  border-radius: 7px 7px 0px 0px;
+  color: white;
+}
+
+.ol-popup:after, .ol-popup:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.ol-popup:after {
+  border-top-color: white;
+  border-width: 10px;
+  left: 48px;
+  margin-left: -10px;
+}
+
+.ol-popup:before {
+  border-top-color: #cccccc;
+  border-width: 11px;
+  left: 48px;
+  margin-left: -11px;
+}
+
+.ol-popup-closer {
+  text-decoration: none;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: white;
+  cursor: pointer;
+}
+
+.ol-popup-closer:hover {
+  color: mediumseagreen;
+}
+
+.ol-popup-closer:after {
+  content: "✖";
+}
+
+// end of popup css
